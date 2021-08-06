@@ -43,23 +43,13 @@ public class MyPanel extends JPanel implements ActionListener {
 		Graphics2D g2D = (Graphics2D) g;
 
 		g2D.drawImage(backgroundImage, 0, 0, null);
-		g2D.drawImage(chrichri, x, y, null);
+		// g2D.drawImage(chrichri, x, y, null);
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
-		if (x >= PANEL_WIDTH - chrichri.getWidth(null) || x < 0) {
-			xVelocity = xVelocity * -1;
-		}
-		x = x + xVelocity;
-
-		if (y >= PANEL_HEIGHT - chrichri.getHeight(null) || y < 0) {
-			yVelocity = yVelocity * -1;
-		}
-		y = y + yVelocity;
-		repaint();
+		// TODO Auto-generated method stub
 
 	}
 
