@@ -1,33 +1,22 @@
 package fr.heighties.testdeplacementschrichri;
 
-import java.awt.Canvas;
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 
-public class MyFrame extends Canvas {
+public class MyFrame extends JFrame {
 
+	private static final long serialVersionUID = -7768607522576631470L;
 	MyPanel panel;
 
-	private static final long serialVersionUID = 204477141609855149L;
-
-	public MyFrame(int width, int height, String title, Game game) {
-		JFrame frame = new JFrame(title);
+	MyFrame() {
 
 		panel = new MyPanel();
 
-		frame.add(panel);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.add(panel);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
 
-		frame.setPreferredSize(new Dimension(width, height));
-		frame.setMaximumSize(new Dimension(width, height));
-		frame.setMinimumSize(new Dimension(width, height));
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
-		frame.setLocationRelativeTo(null);
-		frame.add(game);
-		frame.setVisible(true);
-		game.start();
 	}
 
 }

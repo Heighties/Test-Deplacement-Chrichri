@@ -4,19 +4,35 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.util.Random;
+
+import javax.swing.ImageIcon;
 
 public class Player extends GameObject {
 
 	MyPanel panel;
 	Image chrichri;
 
-	Random r = new Random();
 	Handler handler;
 
 	public Player(int x, int y, ID id, Handler handler) {
+
 		super(x, y, id);
 		this.handler = handler;
+
+		chrichri = new ImageIcon("chrichri.png").getImage();
+
+	}
+
+	public void paint(Graphics g) {
+
+		super.paint(g);
+
+		Graphics2D g2D = (Graphics2D) g;
+
+		// g.setColor(Color.white);
+		g2D.drawImage(chrichri, (int) x, (int) y, null);
+
+		// g.fillRect((int) x, (int) y, 32, 32);
 
 	}
 
@@ -51,27 +67,14 @@ public class Player extends GameObject {
 
 	}
 
-	public void paint(Graphics2D g) {
-
-		super.paint(g);
-
-		Graphics2D g2D = (Graphics2D) g;
-
-		// g.setColor(Color.white);
-		g2D.drawImage(chrichri, x, y, null);
-
-		// g.fillRect((int) x, (int) y, 32, 32);
-
-	}
-
 	@Override
-	public void paint(Graphics g) {
+	public void render(Graphics g) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void render(Graphics g) {
+	public void paint(Graphics2D g) {
 		// TODO Auto-generated method stub
 
 	}
